@@ -1,5 +1,20 @@
 module.exports = function(Sinister) {
 
+  const USERSERVICE_URL = 'http://projetm2gla.istic.univ-rennes1.fr:12346/';
+  Sinister.beforeRemote('*', function(ctx, unused, next) {
+    Sinister.app.datasources.auth
+    .checkAuth(ctx.req.headers.userid, ctx.req.headers.token,
+        function (err, response) {
+      if (err || response.error || response.id !== ctx.req.headers.token) {
+        var e = new Error('You must be logged in to access database');
+        e.status = 401;
+        next(e);
+      } else {
+        next();
+      }
+    });
+  });
+
   Sinister.findCode = function(cb) {
     var sinisterCode = ['SAP','INC','FDF'];
     cb(null, sinisterCode);
