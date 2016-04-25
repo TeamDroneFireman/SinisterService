@@ -15,5 +15,5 @@ This is the API service concerning the Sinister object
 ##API path
 
 There is all the path provided by this service
-- GET   - /api/sinisters/code
+- GET  - /api/sinisters/code
 - GET  - /api/sinisters/means
