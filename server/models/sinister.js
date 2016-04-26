@@ -1,6 +1,6 @@
 module.exports = function(Sinister) {
 
-  const USERSERVICE_URL = 'http://projetm2gla.istic.univ-rennes1.fr:12346/';
+/*
   Sinister.beforeRemote('*', function(ctx, unused, next) {
     Sinister.app.datasources.auth
     .checkAuth(ctx.req.headers.userid, ctx.req.headers.token,
@@ -14,6 +14,7 @@ module.exports = function(Sinister) {
       }
     });
   });
+*/
 
   Sinister.findCode = function(cb) {
     var sinisterCode = ['SAP','INC','FDF'];
