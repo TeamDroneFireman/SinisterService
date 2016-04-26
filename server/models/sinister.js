@@ -2,7 +2,7 @@ module.exports = function(Sinister) {
 
 /*
   Sinister.beforeRemote('*', function(ctx, unused, next) {
-    Sinister.app.datasources.auth
+    Sinister.app.datasources.userService
     .checkAuth(ctx.req.headers.userid, ctx.req.headers.token,
         function (err, response) {
       if (err || response.error || response.id !== ctx.req.headers.token) {
