@@ -65,6 +65,9 @@ module.exports = function(Sinister) {
     cb(null, means);
   };
 
+  /**
+   * Remote method
+   */
   Sinister.remoteMethod('findAllMeans', {
     description: 'Find all instances of the model '+
     'from the data source and return there code.',
@@ -73,5 +76,5 @@ module.exports = function(Sinister) {
     returns: {type: 'array', root: true},
     http: {verb: 'get', path: '/'}
   });
-  
+
 };
