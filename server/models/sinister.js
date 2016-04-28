@@ -16,31 +16,47 @@ module.exports = function(Sinister) {
   });
 */
 
-  Sinister.findCode = function(cb) {
-    var sinisterCode = ['SAP','INC','FDF'];
+
+
+  Sinister.findAllMeans = function(cb) {
+    var sinisterCode=[
+      {'code': 'SAP',
+        'means':
+          ['VSAV']
+        },
+      {'code': 'INC',
+        'means':
+          ['FTP','EPA','VLCG']
+      },
+      {'code': 'FDF',
+        'means':
+          ['CCF','CCGC','VLHR']
+      }
+    ];
     cb(null, sinisterCode);
   };
 
-  Sinister.findMeansByCode = function(code, cb) {
+  Sinister.findMeansByCode = function(id, cb) {
     var means;
-    switch (code){
+    switch (id){
       case 'SAP' :
         means = [
-          {'number': 1,'type':'VSAV'}
+          //{'number': 1,'type':'VSAV'}
+          'VSAV'
         ];
         break;
       case 'INC' :
-        means = [
-          {'number': 2,'type':'FPT'},
-          {'number': 1,'type':'EPA'},
-          {'number': 1,'type':'VLCG'}
+        means = ['FTP','EPA','VLCG'
+          //{'number': 2,'type':'FPT'},
+          //{'number': 1,'type':'EPA'},
+          //{'number': 1,'type':'VLCG'}
         ];
         break;
       case 'FDF' :
-        means = [
-          {'number': 4,'type':'CCF'},
-          {'number': 1,'type':'CCGC'},
-          {'number': 1,'type':'VLHR'}
+        means = ['CCF','CCGC','VLHR'
+          //{'number': 4,'type':'CCF'},
+          //{'number': 1,'type':'CCGC'},
+          //{'number': 1,'type':'VLHR'}
         ];
         break;
       default :
@@ -49,20 +65,13 @@ module.exports = function(Sinister) {
     cb(null, means);
   };
 
-  Sinister.remoteMethod('findCode', {
+  Sinister.remoteMethod('findAllMeans', {
     description: 'Find all instances of the model '+
     'from the data source and return there code.',
     accessType: 'READ',
     accepts: null,
     returns: {type: 'array', root: true},
-    http: {verb: 'get', path: '/code'}
+    http: {verb: 'get', path: '/'}
   });
-
-  Sinister.remoteMethod('findMeansByCode', {
-    description: 'Return all the default means for one sinister code',
-    accessType: 'READ',
-    accepts: {arg: 'code', type: 'string', http: { source: 'query' } },
-    returns: {type: 'array', root: true},
-    http: {verb: 'get', path: '/means'}
-  });
+  
 };

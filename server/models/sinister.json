@@ -11,7 +11,7 @@
       "required": true
     },
     "means": {
-      "type": "object",
+      "type": "array",
       "required": true
     }
   },
