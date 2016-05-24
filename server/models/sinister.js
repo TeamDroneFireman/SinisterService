@@ -20,6 +20,10 @@ module.exports = function(Sinister) {
 
   Sinister.findAllMeans = function(cb) {
     var sinisterCode=[
+      {'code': 'DEFAULT_MEANS',
+        'means':
+          ['VSAV', 'FTP', 'EPA', 'VLCG','CCF','CCGC','VLHR']
+      },
       {'code': 'SAP',
         'means':
           ['VSAV']
