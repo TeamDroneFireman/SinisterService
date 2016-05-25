@@ -49,21 +49,21 @@ module.exports = function(Sinister) {
     switch (id){
       case 'SAP' :
         means = [
-          {'number': 1,'type':'VSAV'}
+          {'count': 1,'name':'VSAV'}
         ];
         break;
       case 'INC' :
         means = [
-          {'number': 2,'type':'FPT'},
-          {'number': 1,'type':'EPA'},
-          {'number': 1,'type':'VLCG'}
+          {'count': 2,'name':'FPT'},
+          {'count': 1,'name':'EPA'},
+          {'count': 1,'name':'VLCG'}
         ];
         break;
       case 'FDF' :
         means = [
-          {'number': 4,'type':'CCF'},
-          {'number': 1,'type':'CCGC'},
-          {'number': 1,'type':'VLHR'}
+          {'count': 4,'name':'CCF'},
+          {'count': 1,'name':'CCGC'},
+          {'count': 1,'name':'VLHR'}
         ];
         break;
       default :
