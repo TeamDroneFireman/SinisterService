@@ -20,13 +20,15 @@ module.exports = function(Sinister) {
     var sinisterCode=[
       {
         'code': 'SAP',
-        'means': [{'count': 1, 'name': 'VSAV'}]
+        'means': [
+          {'count': 1, 'name': 'VSAV'}
+        ]
       },
       {
         'code': 'INC',
         'means':[
           {'number': 2,'type':'FPT'},
-          {'number': 1,'type':'EPA'},
+          {'number': 2,'type':'EPA'},
           {'number': 1,'type':'VLCG'}
         ]
       },
