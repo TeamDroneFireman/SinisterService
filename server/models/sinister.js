@@ -15,26 +15,28 @@ module.exports = function(Sinister) {
     });
   });
 */
-
-
-
+  
   Sinister.findAllMeans = function(cb) {
     var sinisterCode=[
-      {'code': 'DEFAULT_MEANS',
-        'means':
-          ['VSAV', 'FTP', 'EPA', 'VLCG','CCF','CCGC','VLHR', 'DRONE']
+      {
+        'code': 'SAP',
+        'means': {'count': 1, 'name': 'VSAV'}
       },
-      {'code': 'SAP',
-        'means':
-          ['VSAV']
-        },
-      {'code': 'INC',
-        'means':
-          ['FTP','EPA','VLCG']
+      {
+        'code': 'INC',
+        'means':[
+          {'number': 2,'type':'FPT'},
+          {'number': 1,'type':'EPA'},
+          {'number': 1,'type':'VLCG'}
+        ]
       },
-      {'code': 'FDF',
-        'means':
-          ['CCF','CCGC','VLHR']
+      {
+        'code': 'FDF',
+        'means':[
+          {'number': 4,'type':'CCF'},
+          {'number': 1,'type':'CCGC'},
+          {'number': 1,'type':'VLHR'}
+        ]
       }
     ];
     cb(null, sinisterCode);
@@ -45,22 +47,21 @@ module.exports = function(Sinister) {
     switch (id){
       case 'SAP' :
         means = [
-          //{'number': 1,'type':'VSAV'}
-          'VSAV'
+          {'number': 1,'type':'VSAV'}
         ];
         break;
       case 'INC' :
-        means = ['FTP','EPA','VLCG'
-          //{'number': 2,'type':'FPT'},
-          //{'number': 1,'type':'EPA'},
-          //{'number': 1,'type':'VLCG'}
+        means = [
+          {'number': 2,'type':'FPT'},
+          {'number': 1,'type':'EPA'},
+          {'number': 1,'type':'VLCG'}
         ];
         break;
       case 'FDF' :
-        means = ['CCF','CCGC','VLHR'
-          //{'number': 4,'type':'CCF'},
-          //{'number': 1,'type':'CCGC'},
-          //{'number': 1,'type':'VLHR'}
+        means = [
+          {'number': 4,'type':'CCF'},
+          {'number': 1,'type':'CCGC'},
+          {'number': 1,'type':'VLHR'}
         ];
         break;
       default :
