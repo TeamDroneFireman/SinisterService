@@ -15,12 +15,12 @@ module.exports = function(Sinister) {
     });
   });
 */
-  
+
   Sinister.findAllMeans = function(cb) {
     var sinisterCode=[
       {
         'code': 'SAP',
-        'means': {'count': 1, 'name': 'VSAV'}
+        'means': [{'count': 1, 'name': 'VSAV'}]
       },
       {
         'code': 'INC',
