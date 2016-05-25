@@ -22,7 +22,7 @@ module.exports = function(Sinister) {
     var sinisterCode=[
       {'code': 'DEFAULT_MEANS',
         'means':
-          ['VSAV', 'FTP', 'EPA', 'VLCG','CCF','CCGC','VLHR']
+          ['VSAV', 'FTP', 'EPA', 'VLCG','CCF','CCGC','VLHR', 'DRONE']
       },
       {'code': 'SAP',
         'means':
