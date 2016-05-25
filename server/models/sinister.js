@@ -27,17 +27,17 @@ module.exports = function(Sinister) {
       {
         'code': 'INC',
         'means':[
-          {'number': 2,'type':'FPT'},
-          {'number': 2,'type':'EPA'},
-          {'number': 1,'type':'VLCG'}
+          {'count': 2,'name':'FPT'},
+          {'count': 2,'name':'EPA'},
+          {'count': 1,'name':'VLCG'}
         ]
       },
       {
         'code': 'FDF',
         'means':[
-          {'number': 4,'type':'CCF'},
-          {'number': 1,'type':'CCGC'},
-          {'number': 1,'type':'VLHR'}
+          {'count': 4,'name':'CCF'},
+          {'count': 1,'name':'CCGC'},
+          {'count': 1,'name':'VLHR'}
         ]
       }
     ];
