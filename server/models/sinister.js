@@ -21,7 +21,14 @@ module.exports = function(Sinister) {
       {
         'code': 'SAP',
         'means': [
-          {'count': 1, 'name': 'VSAV'}
+          {'count': 1, 'name': 'VSAV'},
+          {'count': 0,'name':'FPT'},
+          {'count': 0,'name':'EPA'},
+          {'count': 0,'name':'VLCG'},
+          {'count': 0,'name':'CCF'},
+          {'count': 0,'name':'CCGC'},
+          {'count': 0,'name':'VLHR'},
+          {'count': 0,'name':'DRONE'}
         ]
       },
       {
@@ -29,7 +36,12 @@ module.exports = function(Sinister) {
         'means':[
           {'count': 2,'name':'FPT'},
           {'count': 2,'name':'EPA'},
-          {'count': 1,'name':'VLCG'}
+          {'count': 1,'name':'VLCG'},
+          {'count': 0,'name':'CCF'},
+          {'count': 0,'name':'CCGC'},
+          {'count': 0,'name':'VLHR'},
+          {'count': 0,'name':'VSAV'},
+          {'count': 0,'name':'DRONE'}
         ]
       },
       {
@@ -37,7 +49,13 @@ module.exports = function(Sinister) {
         'means':[
           {'count': 4,'name':'CCF'},
           {'count': 1,'name':'CCGC'},
-          {'count': 1,'name':'VLHR'}
+          {'count': 1,'name':'VLHR'},
+          {'count': 0,'name':'VSAV'},
+          {'count': 0,'name':'FPT'},
+          {'count': 0,'name':'EPA'},
+          {'count': 0,'name':'VLCG'},
+          {'count': 0,'name':'DRONE'}
+
         ]
       }
     ];
