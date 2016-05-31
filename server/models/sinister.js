@@ -16,31 +16,72 @@ module.exports = function(Sinister) {
   });
 */
 
-  Sinister.findCode = function(cb) {
-    var sinisterCode = ['SAP','INC','FDF'];
+  Sinister.findAllMeans = function(cb) {
+    var sinisterCode=[
+      {
+        'code': 'SAP',
+        'means': [
+          {'count': 1, 'name': 'VSAV'},
+          {'count': 0,'name':'FPT'},
+          {'count': 0,'name':'EPA'},
+          {'count': 0,'name':'VLCG'},
+          {'count': 0,'name':'CCF'},
+          {'count': 0,'name':'CCGC'},
+          {'count': 0,'name':'VLHR'},
+          {'count': 0,'name':'DRONE'}
+        ]
+      },
+      {
+        'code': 'INC',
+        'means':[
+          {'count': 2,'name':'FPT'},
+          {'count': 2,'name':'EPA'},
+          {'count': 1,'name':'VLCG'},
+          {'count': 0,'name':'CCF'},
+          {'count': 0,'name':'CCGC'},
+          {'count': 0,'name':'VLHR'},
+          {'count': 0,'name':'VSAV'},
+          {'count': 0,'name':'DRONE'}
+        ]
+      },
+      {
+        'code': 'FDF',
+        'means':[
+          {'count': 4,'name':'CCF'},
+          {'count': 1,'name':'CCGC'},
+          {'count': 1,'name':'VLHR'},
+          {'count': 0,'name':'VSAV'},
+          {'count': 0,'name':'FPT'},
+          {'count': 0,'name':'EPA'},
+          {'count': 0,'name':'VLCG'},
+          {'count': 0,'name':'DRONE'}
+
+        ]
+      }
+    ];
     cb(null, sinisterCode);
   };
 
-  Sinister.findMeansByCode = function(code, cb) {
+  Sinister.findMeansByCode = function(id, cb) {
     var means;
-    switch (code){
+    switch (id){
       case 'SAP' :
         means = [
-          {'number': 1,'type':'VSAV'}
+          {'count': 1,'name':'VSAV'}
         ];
         break;
       case 'INC' :
         means = [
-          {'number': 2,'type':'FPT'},
-          {'number': 1,'type':'EPA'},
-          {'number': 1,'type':'VLCG'}
+          {'count': 2,'name':'FPT'},
+          {'count': 1,'name':'EPA'},
+          {'count': 1,'name':'VLCG'}
         ];
         break;
       case 'FDF' :
         means = [
-          {'number': 4,'type':'CCF'},
-          {'number': 1,'type':'CCGC'},
-          {'number': 1,'type':'VLHR'}
+          {'count': 4,'name':'CCF'},
+          {'count': 1,'name':'CCGC'},
+          {'count': 1,'name':'VLHR'}
         ];
         break;
       default :
@@ -49,20 +90,16 @@ module.exports = function(Sinister) {
     cb(null, means);
   };
 
-  Sinister.remoteMethod('findCode', {
+  /**
+   * Remote method
+   */
+  Sinister.remoteMethod('findAllMeans', {
     description: 'Find all instances of the model '+
     'from the data source and return there code.',
     accessType: 'READ',
     accepts: null,
     returns: {type: 'array', root: true},
-    http: {verb: 'get', path: '/code'}
+    http: {verb: 'get', path: '/'}
   });
 
-  Sinister.remoteMethod('findMeansByCode', {
-    description: 'Return all the default means for one sinister code',
-    accessType: 'READ',
-    accepts: {arg: 'code', type: 'string', http: { source: 'query' } },
-    returns: {type: 'array', root: true},
-    http: {verb: 'get', path: '/means'}
-  });
 };
